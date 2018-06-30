@@ -8,6 +8,20 @@
 // Return true if the potential password matches the `password` property.  Otherwise return false.
 
 // code here
+class User {
+  constructor(options) {
+    this.email = options.email;
+    this.password = options.password;
+  }
+  comparePasswords(pw) {
+    if (pw === this.password) return true;
+    return false;
+  }
+}
+// **********no semi colon in the end needed in class.*******
+
+
+
 
 // Part 2
 // Create a class called `Animal` and a class called `Cat` using ES6 classes.
@@ -20,6 +34,30 @@
 // property set on the Cat instance.
 
 // code here
+
+class Animal {
+  constructor(options) {
+    this.age = options.age;
+  }
+  growOlder() {
+    return ++this.age;  // growOlder(method) is outside of class constructor.
+  }
+}
+
+class Cat extends Animal {
+  constructor(options) {
+    super(options);
+    this.name = options.name;
+  }
+  meow() {
+    Console.log(this.name + 'meowed!'); // this is not working here.
+
+    //**return `${this.name 'meowed!'}`;
+    // return `${this.name} meowed!`;   
+    // this is new in es6.
+}
+}
+
 
 /* eslint-disable no-undef */
 
